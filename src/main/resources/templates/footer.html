@@ -3,19 +3,49 @@
 <head>
 </head>
 <body>
-<footer class="bg-white py-4 mt-auto" th:fragment="footer">
+
+<footer class="bg-white py-4 mt-auto"
+        th:fragment="footer">
+
   <div class="container px-5">
     <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-      <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
+
+      <!-- Left section -->
       <div class="col-auto">
-        <a class="small" href="#!">Privacy</a>
-        <span class="mx-1">&middot;</span>
-        <a class="small" href="#!">Terms</a>
-        <span class="mx-1">&middot;</span>
-        <a class="small" href="#!">Contact</a>
+        <div class="small m-0"
+             th:text="${footer.copyright}">
+          © 2026 Md Mohsin Haider
+        </div>
       </div>
+
+      <!-- Right section -->
+      <div class="col-auto">
+        <a class="small"
+           href="#!"
+           th:text="${footer.privacyText}">
+          Privacy
+        </a>
+
+        <span class="mx-1">&middot;</span>
+
+        <a class="small"
+           href="#!"
+           th:text="${footer.termsText}">
+          Terms
+        </a>
+
+        <span class="mx-1">&middot;</span>
+
+        <a class="small"
+           th:href="@{/contact}"
+           th:text="${footer.contactText}">
+          Contact
+        </a>
+      </div>
+
     </div>
   </div>
 </footer>
+
 </body>
 </html>
